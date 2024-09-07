@@ -638,7 +638,7 @@
       <div><b>Terminal Bonus (%)</b></div>
       <div><input class="form-control" id="TerminalBonus" type="number" /></div>
       <br />
-      <div class="select" style="display: flex; flex-direction: row;"">
+      <div class="select" style="display: flex; flex-direction: row;">
       <div class="centered-content">
         <input name="surrenderType" id="surrendered" type="radio" />
         <label for="surrendered"><b>Early Surrendered</b></label>
@@ -817,7 +817,7 @@
                 </div>
                 <div class="btn-calculate" style="display: flex; flex-direction: row;">
                     <button id="submitBtn2" type="submit" class="btn btn-calculate">Calculate</button>
-                    <button type="clearBtn7" class="btn btn-secondary" style="text-align: center;" clearGST()">Clear</button>
+                    <button type="button" class="btn btn-secondary" style="text-align: center;" onclick="clearGST()">Clear</button>
                 </div>
             </form>
             <div id="result" class="mt-3">
@@ -1557,7 +1557,7 @@
   <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
   <script src="https://mediafiles.botpress.cloud/5e160793-5606-4412-ba4c-337e416f14fe/webchat/config.js" defer></script>
       <script defer src="./assets/js/arthsathi-style.js"></script>
-  <script src="./assets/js/botpress.js"></script>
+  <script src="./assets/js/botpress.jsx"></script>
   <script>
     // Get the modals
     var loginModal = document.getElementById('myModal');
