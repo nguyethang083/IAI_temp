@@ -6,4 +6,4 @@ function hidePreloader() {
     }
 }
 
-setTimeout(hidePreloader, 3000);
+setTimeout(hidePreloader, 0);
