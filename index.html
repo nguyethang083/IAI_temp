@@ -61,12 +61,8 @@
 
     }
 
-    * {
-      cursor: url('/assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-    }
 
-
-    .circle {
+    /* .circle {
       position: absolute;
       width: 25px;
       height: 25px;
@@ -74,9 +70,9 @@
       pointer-events: none;
       background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
       transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
+    } */
 
-    .circle-container {
+    /* .circle-container {
       position: fixed;
       top: 0;
       left: 0;
@@ -84,12 +80,12 @@
       height: 100%;
       pointer-events: none;
       z-index: 9999;
-    }
+    } */
 
     @media (max-width: 720px) {
-      .circle-container {
+      /* .circle-container {
         display: none;
-      }
+      } */
       .tradingview-widget-container{
         max-width: 100vw;
         overflow-x: auto;
@@ -136,7 +132,7 @@
 
 <body>
 
-  <div class="circle-container">
+  <!-- <div class="circle-container">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -167,44 +163,45 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-  </div>
+  </div> -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
+    //   const circles = document.querySelectorAll(".circle");
 
-      circles.forEach(function (circle) {
-        circle.x = 0;
-        circle.y = 0;
-      });
+    //   circles.forEach(function (circle) {
+    //     circle.x = 0;
+    //     circle.y = 0;
+    //   });
 
       window.addEventListener("mousemove", function (e) {
         coords.x = e.pageX;
         coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
       });
 
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
+    //   function animateCircles() {
+    //     let x = coords.x;
+    //     let y = coords.y;
 
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+    //     circles.forEach(function (circle, index) {
+    //       circle.style.left = `${x - 12}px`;
+    //       circle.style.top = `${y - 12}px`;
+    //       circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
+    //       const nextCircle = circles[index + 1] || circles[0];
+    //       circle.x = x;
+    //       circle.y = y;
 
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
+    //       x += (nextCircle.x - x) * 0.3;
+    //       y += (nextCircle.y - y) * 0.3;
+    //     });
 
-        requestAnimationFrame(animateCircles);
-      }
+    //     requestAnimationFrame(animateCircles);
+    //   }
 
-      animateCircles();
-    });
+    //   animateCircles();
+    // 
+  });
 
   </script>
 
@@ -239,12 +236,9 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="./about.html">About Us 📖</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                  </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a class="page-scroll" href="./blog.html">Blogs 📰</a>
                   </li>
@@ -319,8 +313,7 @@
             <nav class="mobile-menu ">
               <a class="page-scroll active-link" href="./index.html">Home 🏡</a>
               <a class="page-scroll" href="./about.html">About Us 📖</a>
-              <a class="page-scroll" href="./trends.html">Trends 📈</a>
-              <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+              <!-- <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a> -->
               <a class="page-scroll" href="./blog.html">Blogs 📰</a>
               <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
               <li class="nav-item no-underline">
@@ -380,7 +373,7 @@
   </header>
 
   <!-- Cookie Consent Popup -->
-  <div id="cookieConsent" class="cookie-consent">
+  <!-- <div id="cookieConsent" class="cookie-consent">
     <h4>🍪Cookies Consent <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#175394" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cookie-icon">
       <circle cx="12" cy="12" r="10"></circle>
       <path d="M12 8v4"></path>
@@ -388,7 +381,7 @@
   </svg></h4>
     <p>We use cookies to enhance your experience on FinVeda. By continuing to use our site, you agree to our use of cookies. <br> <a href="blogs/privacy-policy.html" target="_blank">Learn more</a> <button id="acceptCookies">Accept all cookies</button></p>
     
-</div>
+</div> -->
 
   <section id="features" class="services-area pt-120">
     <div class="container">
@@ -428,14 +421,14 @@
               <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape" />
               <i class="lni-cog"></i>
             </div>
-            <div class="services-content mt-30">
+            <!-- <div class="services-content mt-30">
               <h4 class="services-title"><a href="tools/sip.html">Finance Tools</a></h4>
               <p class="text">
                 With our SIP and PPF tools you'll discover power of compounding and make informed decisions regarding
                 your savings.
               </p>
               <a class="more" href="tools/sip.html">Learn More <i class="lni-chevron-right"></i></a>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-lg-4 col-md-7 col-sm-8">
@@ -446,12 +439,12 @@
               <i class="lni-bolt-alt"></i>
             </div>
             <div class="services-content mt-30">
-              <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
+              <!-- <h4 class="services-title"><a href="trends.html">Financial Trends</a></h4>
               <p class="text">
                 You will make smarter decisions by staying updated to the current market happenings in real time with
                 our Stock Market API's results.
               </p>
-              <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a>
+              <a class="more" href="./trends.html">Learn More <i class="lni-chevron-right"></i></a> -->
             </div>
           </div>
         </div>
@@ -777,9 +770,9 @@
      border-bottom-right-radius: 0 !important;
     }
     
-    .left:hover {
+    /* .left:hover {
       background-color: rgba(255, 255, 255, 0.23);
-    }
+    } */
     
      .social-pill div a {
       padding: 15px 13px;
@@ -1707,8 +1700,8 @@ function getPrevId(currentId) {
                       <ul class="link custom-margin">
                           <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
                           <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                          <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                          <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                          <!-- <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li> -->
+                          <!-- <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li> -->
                           <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
                           <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                       </ul>
@@ -1871,23 +1864,23 @@ function getPrevId(currentId) {
 
   <script>
 
-   document.addEventListener('DOMContentLoaded', function () {
-    const cookieConsent = document.getElementById('cookieConsent');
-    const acceptCookiesButton = document.getElementById('acceptCookies');
+//    document.addEventListener('DOMContentLoaded', function () {
+//     const cookieConsent = document.getElementById('cookieConsent');
+//     const acceptCookiesButton = document.getElementById('acceptCookies');
 
-    // Show the cookie consent popup on every page refresh
-    cookieConsent.classList.add('show');
+//     // Show the cookie consent popup on every page refresh
+//     cookieConsent.classList.add('show');
 
-    // Handle the "Accept" button click
-    acceptCookiesButton.addEventListener('click', function () {
-        cookieConsent.classList.remove('show');
-        cookieConsent.classList.add('hide');
-        // Hide the popup after animation ends
-        setTimeout(() => {
-            cookieConsent.style.display = 'none';
-        }, 500); // Matches animation duration
-    });
-});
+//     // Handle the "Accept" button click
+//     acceptCookiesButton.addEventListener('click', function () {
+//         cookieConsent.classList.remove('show');
+//         cookieConsent.classList.add('hide');
+//         // Hide the popup after animation ends
+//         setTimeout(() => {
+//             cookieConsent.style.display = 'none';
+//         }, 500); // Matches animation duration
+//     });
+// });
 
   </script>
 

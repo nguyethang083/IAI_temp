@@ -38,11 +38,7 @@
         background-color: #f76b45;
         z-index: 9999;
       }
-      * {
-      cursor: url('./assets/images/ads_click_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg'), auto;
-    }
-
-
+    
     .circle {
       position: absolute;
       width: 25px;
@@ -145,39 +141,39 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
+      // const circles = document.querySelectorAll(".circle");
 
-      circles.forEach(function (circle) {
-        circle.x = 0;
-        circle.y = 0;
-      });
+      // circles.forEach(function (circle) {
+      //   circle.x = 0;
+      //   circle.y = 0;
+      // });
 
       window.addEventListener("mousemove", function (e) {
         coords.x = e.pageX;
         coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
       });
 
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
+      // function animateCircles() {
+      //   let x = coords.x;
+      //   let y = coords.y;
 
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+      //   circles.forEach(function (circle, index) {
+      //     circle.style.left = `${x - 12}px`;
+      //     circle.style.top = `${y - 12}px`;
+      //     circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
+      //     const nextCircle = circles[index + 1] || circles[0];
+      //     circle.x = x;
+      //     circle.y = y;
 
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
+      //     x += (nextCircle.x - x) * 0.3;
+      //     y += (nextCircle.y - y) * 0.3;
+      //   });
 
-        requestAnimationFrame(animateCircles);
-      }
+      //   requestAnimationFrame(animateCircles);
+      // }
 
-      animateCircles();
+      // animateCircles();
     });
 
   </script>
@@ -244,14 +240,10 @@
                     <li class="nav-item">
                       <a class="page-scroll" href="./about.html">About Us 📖</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                    </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="page-scroll" href="./tools/sip.html"
-                        >Tools 🔧</a
-                      >
-                    </li>
+                        >Tools 🔧</a>
+                    </li> -->
                     <li class="nav-item active">
                       <a class="page-scroll" href="./blog.html" id="active-page"
                         >Blogs 📰</a
@@ -367,8 +359,7 @@
               <nav class="mobile-menu ">
                 <a class="page-scroll" href="./index.html">Home 🏡</a>
                 <a class="page-scroll" href="./about.html">About Us 📖</a>
-                <a class="page-scroll" href="./trends.html">Trends 📈</a>
-                <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a>
+                <!-- <a class="page-scroll" href="./tools/sip.html">Tools 🔧</a> -->
                 <a class="page-scroll active-link" href="./blog.html">Blogs 📰</a>
                 <a class="page-scroll" href="./quiz.html">Quiz 🤔</a>
                 <a class="page-scroll main-btn" href="#" onclick="openModal()" onmouseout="this.style.color='white'">Login/Register 💻</a>
@@ -783,8 +774,7 @@
                         <ul class="link custom-margin">
                             <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
                             <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                            <li><a href="./trends.html"><i class="fas fa-chart-line"></i> Trends</a></li>
-                            <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li>
+                            <!-- <li><a href="./tools/sip.html"><i class="fas fa-tools"></i> Tools</a></li> -->
                             <li><a href="./blog.html"><i class="fas fa-blog"></i> Blog</a></li>
                             <li><a href="./quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
                         </ul>
