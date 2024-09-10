@@ -1,37 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-.content {
-    max-width: 600px;
-    margin: auto;
-}
+/* popup.css */
 
 .popup-menu {
-    position: absolute;
     display: none;
-    background-color: white;
+    position: absolute;
+    background-color: #f9f9f9;
     border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.popup-menu ul {
-    list-style: none;
-    margin: 0;
     padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
-.popup-menu ul li {
-    padding: 5px 10px;
+.popup-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
 }
 
-.popup-menu ul li a {
-    text-decoration: none;
-    color: #333;
+.popup-menu button:hover {
+    background-color: #0056b3;
 }
 
-.popup-menu ul li a:hover {
-    background-color: #f0f0f0;
+.popup-menu button:last-child {
+    margin-bottom: 0;
 }
