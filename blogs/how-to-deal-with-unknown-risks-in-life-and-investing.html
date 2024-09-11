@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../assets/css/popupExplain.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../ChatBot-UI/Css/chatBot.css">
     <style>
 @media (max-width: 720px) {
     }
@@ -248,14 +249,38 @@ document.addEventListener("DOMContentLoaded", function () {
       max-width: 80%; /* Adjust this value to increase or decrease the margins */
       }
     </style>
-
-  
 <!-- Timed popup that will appear after succesful submission of feebback form! -->
     <button class="notification" id="successnotification" style="display:none;">
       <span class="message" id="successmsg">Submitted successfully!</span>
       <span class="closenotif" id="closeSuccessNotification">✖</span>
       <div class="timerline" id="timerline"></div>
     </button>
+    <div class="chatBot">
+      <div class="chatBotHeading">
+          <label for="chatTextBox" id="chatOpenTrigger" class="">Any Queries? Ask Me!</label>
+      </div>
+      <hr class="">
+      <div class="chatBody">
+          <div class="chatSession">
+          </div>
+      </div>
+      <form class="chatForm" autocomplete="off">
+          <div class="typingArea">
+              <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+              <button type="submit" class="sendButton" id="sendButton"><img src="../ChatBot-UI/Gfx/send.svg" alt="Send" srcset=""></button>
+          </div>
+          <button type="button" id="chatCloseTrigger">Close Chat!</button>
+      </form>
+  </div>
+  <script src="../ChatBot-UI/Js/chatBotConversation.js"></script>
+  <script src="../ChatBot-UI/Js/chatBotValidate.js"></script>
+  <script src="../ChatBot-UI/Js/chatBotAnimate.js"></script>
+  <div id="popup-menu" class="popup-menu">
+    <button id="explainBtn">Explain</button>
+    <button id="similarBtn">Similar</button>
+    <button id="closeBtn">Close</button>
+</div>
+<script src="../assets/js/popupExplain.js"></script>
     <footer id="footer" class="footer-area pt-120">
       <div class="container">
         <div
@@ -380,9 +405,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   justify-content: center;
                   text-align: center;
                   width: 100%;
-                  height: 100%;
-                "
-              >
+                  height: 100%;">
                 <div class="copyright-content" style="text-align: center">
                   <p class="text" style="text-align: center">
                     © <span id="copyright-year"></span> FinVeda. All rights
@@ -417,12 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../tools/smoothScroll.js"></script>
-    <div id="popup-menu" class="popup-menu">
-      <button id="copyBtn">Copy</button>
-      <button id="searchBtn">Search</button>
-      <button id="closeBtn">Close</button>
-  </div>
-
-  <script src="../assets/js/popupExplain.js"></script>
+    <script src="../assets/js/chatbotWindow.js"></script>
+    <script src="../assets/js/chatbotLogic.js" defer></script>
   </body>
 </html>
