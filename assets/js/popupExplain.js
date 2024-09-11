@@ -1,7 +1,5 @@
 const popup = document.getElementById('popup-menu');
 const explainBtn = document.getElementById('explainBtn');
-const similarBtn = document.getElementById('similarBtn');
-const closeBtn = document.getElementById('closeBtn');
 
 function showPopupMenu(x, y) {
   popup.style.left = x + 'px';
@@ -18,17 +16,6 @@ document.addEventListener('mouseup', (event) => {
   } else {
     popup.style.display = 'none';
   }
-});
-
-closeBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
-
-similarBtn.addEventListener('click', () => {
-  const selection = window.getSelection().toString();
-  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(selection)}`;
-  window.open(googleUrl, '_blank');
-  popup.style.display = 'none';
 });
 
 document.addEventListener("click", (event) => {
