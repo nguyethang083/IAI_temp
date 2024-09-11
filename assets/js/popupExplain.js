@@ -51,10 +51,11 @@ document.addEventListener("click", (event) => {
   //  // Count the iteration for opening the ChatBot,
   //  // If count is 0, Initialize chat
   //  // Else continue the chat
-  var chatBotIteration        = 0
+  // var chatBotIteration        = 0
 
   //  // Function to open ChatBot
   function openChatBot() {
+    console.log("hi")
     setTimeout(function(){ animateChatBot.classList.add( "active" )}, 0)
     setTimeout(function(){
         // // Animate ChatOpenTrigger
@@ -72,16 +73,80 @@ document.addEventListener("click", (event) => {
         //  // Animate ChatForm
         animateChatForm.classList.add( "active" )
     }, 1000)
-    if( chatBotIteration == 0 )
-        setTimeout(function(){
-            //  // Initiate chat
-            initiateConversation()
-        }, 2000)
-    chatBotIteration++
+    // if( chatBotIteration == 0 )
+    //     setTimeout(function(){
+    //         //  // Initiate chat
+    //         initiateConversation()
+    //     }, 2000)
+    // chatBotIteration++
+  }
+  function createContainer( typeOfContainer ) {
+    var containerID = ""
+    var textClass   = ""
+    switch( typeOfContainer ) {
+        case "message"      :
+            // This would create a message container for user's message
+            containerID = "messageContainer"
+            textClass   = "message"
+            break;
+        case "reply"        :
+        case "initialize"   :
+        case "error"        :
+            // This would create a reply container for bot's reply
+            containerID = "replyContainer"
+            textClass   = "reply"
+            break;
+        default :
+            alert("Error! Please reload the webiste.")
+    }
+    // Creating container
+    var newContainer = document.createElement( "div" )
+    newContainer.setAttribute( "class" , "container" )
+    if( containerID == "messageContainer" )
+        newContainer.setAttribute( "id" , "messageContainer" )
+    if( containerID == "replyContainer" )
+        newContainer.setAttribute( "id" , "replyContainer" )
+    chatBotSession.appendChild( newContainer )
 
+    switch( textClass ) {
+        case "message"  :
+            var allMessageContainers    = document.querySelectorAll("#messageContainer")
+            var lastMessageContainer    = allMessageContainers[ allMessageContainers.length - 1 ]
+            var newMessage              = document.createElement( "p" )
+            newMessage.setAttribute( "class" , "message animateChat" )
+            newMessage.innerHTML        = inputMessage
+            lastMessageContainer.appendChild( newMessage )
+            lastMessageContainer.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+            break
+        case "reply"    :
+            var allReplyContainers      = document.querySelectorAll( "#replyContainer" )    
+            var lastReplyContainer      = allReplyContainers[ allReplyContainers.length - 1 ]
+            var newReply                = document.createElement( "p" )
+            newReply.setAttribute( "class" , "reply animateChat accentColor" )
+            switch( typeOfContainer ){
+                case "reply"        :
+                    newReply.innerHTML  = chatBotReply
+                    break
+                case "initialize"   :
+                    newReply.innerHTML  = chatBotInitiateMessage
+                    break
+                case "error"        :
+                    newReply.innerHTML  = chatBotBlankMessageReply
+                    break
+                default             :
+                    newReply.innerHTML  = "Sorry! I could not understannd."
+            }
+            setTimeout(function (){
+                lastReplyContainer.appendChild( newReply )
+                lastReplyContainer.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+            }, 10)            
+            break
+        default         :
+            console.log("Error in conversation")
+    }
   }
   if (event.target.id == 'explainBtn') {
-    openChatBot;
+    openChatBot();
     inputMessage = window.getSelection().toString();
     typeOfContainer = "message";
     createContainer( typeOfContainer );
@@ -89,7 +154,7 @@ document.addEventListener("click", (event) => {
       typeOfContainer = "reply"
       createContainer( typeOfContainer )
     }, 750);
-    chatBotTextArea.value = "";
-    chatBotTextArea.focus();
+    chatBotTextArea.value = ""
+    chatBotTextArea.focus()
   }
 })
