@@ -19,16 +19,11 @@
     <link rel="stylesheet" href="../assets/css/default.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/popup.css" />
-    <link rel="stylesheet" href="../assets/css/popupExplain.css">
-    <link href="../assets/css/banzai/tailwind.css" rel="stylesheet" />
-    <link href="../assets/css/banzai/wellness.v2.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://static-app-misc.banzai.org/css/variables2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../ChatBot-UI/Css/chatBot.css">
+    <link rel="stylesheet" href="../assets/css/popupExplain.css">
     <style>
-@media (max-width: 720px) {
-    }
 #progressBar {
         position: fixed;
         top: 0;
@@ -41,7 +36,6 @@
 </style>
 </head>
 <body>
-</div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const coords = { x: 0, y: 0 };
@@ -66,22 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("progressBar").style.width = scrolled + "%";
   };
 </script>
-    <div class="preloader">
-      <div class="loader">
-        <div class="ytp-spinner">
-          <div class="ytp-spinner-container">
-            <div class="ytp-spinner-rotator">
-              <div class="ytp-spinner-left">
-                <div class="ytp-spinner-circle"></div>
-              </div>
-              <div class="ytp-spinner-right">
-                <div class="ytp-spinner-circle"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <header class="header-area">
       <div class="navbar-area">
         <div class="container">
@@ -121,15 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
          </div>
        </div>
      </div>
-     <div class="hero-image">
-      <img alt="" src="https://static-app-misc.teachbanzai.com/img/health-savings-account.jpg" width="100%" height="5%" />
-    </div>
-    <div class="timestamp__line">
-      <span class="timestamp__icon"><i class="bz-pro bz-pro-calendar"></i></span>
-      
-      Last Updated December 21, 2023
-      
-    </div>
     </header>
     <div class="blog-content">
       <article>
@@ -154,14 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>These are some of the ways to deal with unknown risks in life and investing, but there are many more factors to consider. You should also seek professional advice from financial planners, accountants, lawyers, and mentors, who can help you assess your situation and plan accordingly. Dealing with unknown risks is a challenging but rewarding process that can help you grow and thrive in the long run.</p >
       </article>
     </div>
-    <style>
-      .blog-content {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 80%; /* Adjust this value to increase or decrease the margins */
-      }
-    </style>
     <div class="chatBot">
       <div class="chatBotHeading">
           <label for="chatTextBox" id="chatOpenTrigger" class="">Any Queries? Ask Me!</label>
@@ -186,6 +147,13 @@ document.addEventListener("DOMContentLoaded", function () {
     <button id="explainBtn">Explain</button>
 </div>
 <script src="../assets/js/popupExplain.js"></script>
+<style>    
+.blog-content {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: auto;
+  max-width: 70%;}
+</style>
 <footer id="footer" class="footer-area pt-120">
   <div class="container">
   </div>

@@ -1,5 +1,6 @@
 .chatBot {
-  width: 400px;
+  /* change width of the chatbot here*/
+  width: 350px;
   height: 46px;
   position: fixed;
   z-index: 10;
@@ -256,6 +257,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  /* change here for chatbot height*/
   height: 70%;
   padding: 5px;
 }
@@ -360,6 +362,7 @@
 }
 
 .chatBot.active {
+  /*change here for chatbot height*/
   height: 80%;
   background-size: 80px;
   -webkit-transition: all 0.2s, background-size 0.2s linear 0.5s;

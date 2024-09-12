@@ -1930,7 +1930,7 @@ p {
 }
 .blog-content {
   text-align: left;
-  margin-left: auto;
+  margin-left: auto; /* Adjust this value to increase the left margin */
   margin-right: auto;
   max-width: 80%;
   padding: 20px;
@@ -1983,16 +1983,19 @@ p {
   color: #d32f2f;
   margin-top: 10px;
   transition: 0.8s ease;
+  margin-right: 10%;
 }
 .single-blog .blog-content .more:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+  margin-right: 10%;
 }
 .single-blog .blog-content .more:hover{
   background: orange;
   color: white;
   padding: 10px;
   border-radius: 5px;
+  margin-right: 10%;
 }
 
 .row {
@@ -2032,11 +2035,13 @@ p {
     margin-bottom: 30px;
   }
   .single-blog .blog-content .more::after {
+    margin-right: 10%;
     width: 46%;
     height: 1.7px;
   }
   .blog-content{
     max-width: 100%;
+    margin-right: 10%;
   }
 }
 
