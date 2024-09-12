@@ -1,7 +1,5 @@
-// Selecting element to view chat
 var chatBotSession              = document.querySelector( ".chatBot .chatBody .chatSession" )
 
-// Selecting trigger elements of conversation
 var chatBotSendButton           = document.querySelector( ".chatBot .chatForm #sendButton" )
 var chatBotTextArea             = document.querySelector( ".chatBot .chatForm #chatTextBox" )
 
@@ -27,7 +25,7 @@ chatBotSendButton.addEventListener("click", (event)=> {
         setTimeout(function(){
             typeOfContainer = "reply"
             createContainer( typeOfContainer )
-        }, 750);
+        }, 0);
     }
     else{        
         typeOfContainer = "error";

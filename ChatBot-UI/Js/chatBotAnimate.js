@@ -22,57 +22,55 @@ var chatBotIteration        = 0
 
 //  // Function to open ChatBot
 function openChatBot() {
-    setTimeout(function(){
-        //  // Animate ChatBot
+    // setTimeout(function(){
+    //     //  // Animate ChatBot
         animateChatBot.classList.add( "active" )
-    }, 0)
-    setTimeout(function(){
-        //  // Animate ChatOpenTrigger
+    // }, 0)
+    // setTimeout(function(){
+    //     //  // Animate ChatOpenTrigger
         chatOpenTrigger.classList.add( "active" )
-    }, 250)
-    setTimeout(function(){
-        //  // Animate ChatSeperater
+    // }, 0)
+    // setTimeout(function(){
+    //     //  // Animate ChatSeperater
         animateChatSeparater.classList.add( "active" )
-    }, 500)
-    setTimeout(function(){
-        //  // Animate ChatBody
+    // }, 0)
+    // setTimeout(function(){
+    //     //  // Animate ChatBody
         animateChatBody.classList.add( "active" )
-    }, 750)
-    setTimeout(function(){
-        //  // Animate ChatForm
+    // }, 0)
+    // setTimeout(function(){
+    //     //  // Animate ChatForm
         animateChatForm.classList.add( "active" )
-    }, 1000)
+    // }, 0)
     if( chatBotIteration == 0 )
-        setTimeout(function(){
-            //  // Initiate chat
+
             initiateConversation()
-        }, 2000)
     chatBotIteration++
 }
 
 //  // Function to close ChatBot
 function closeChatBot() {
-    setTimeout(function() {
-        //  // Animate ChatForm
+    // setTimeout(function() {
+    //     //  // Animate ChatForm
         animateChatForm.classList.remove( "active" )
-    }, 0)
-    setTimeout(function() {
+    // }, 0)
+    // setTimeout(function() {
         //  // Animate ChatBody
         animateChatBody.classList.remove( "active" )
-    }, 250)
-    setTimeout(function() {
+    // }, 250)
+    // setTimeout(function() {
         //  // Animate ChatSeperater
         animateChatSeparater.classList.remove( "active" )
-    }, 500)
-    setTimeout(function() {
+    // }, 500)
+    // setTimeout(function() {
         //  // Animate ChatOpenTrigger
         chatOpenTrigger.classList.remove( "active" )
-    }, 750)
-    setTimeout(function() {
+    // }, 750)
+    // setTimeout(function() {
         //  // Animate ChatBot
         animateChatBot.classList.remove( "active" )
         //  // Clear the chat
         //  // ------------ Uncomment the next line if you want to clear chat everytime you close the ChatBot.
-        // chatSession.innerHTML = ""
-    }, 1000)
+        chatSession.innerHTML = ""
+    // }, 1000)
 }
