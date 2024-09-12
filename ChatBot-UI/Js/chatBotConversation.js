@@ -1,109 +1,139 @@
-var chatBotSession              = document.querySelector( ".chatBot .chatBody .chatSession" )
+// Selecting element to view chat
+var chatBotSession = document.querySelector(".chatBot .chatBody .chatSession");
 
-var chatBotSendButton           = document.querySelector( ".chatBot .chatForm #sendButton" )
-var chatBotTextArea             = document.querySelector( ".chatBot .chatForm #chatTextBox" )
+// Selecting trigger elements of conversation
+var chatBotSendButton = document.querySelector(
+  ".chatBot .chatForm #sendButton"
+);
+var chatBotTextArea = document.querySelector(".chatBot .chatForm #chatTextBox");
 
 // Default values for replies
-var chatBotInitiateMessage      = "Hello! I am ChatBot."
-var chatBotBlankMessageReply    = "Type something!"
-var chatBotReply                = "{{ reply }}"
+var chatBotInitiateMessage = "Hello! I am ChatBot.";
+var chatBotBlankMessageReply = "Type something!";
+var chatBotReply = "{{ reply }}";
 
 // Collecting user input
-var inputMessage                = ""
+var inputMessage = "";
 
 // This helps generate text containers in the chat
-var typeOfContainer             = ""
+var typeOfContainer = "";
 
 // Function to open ChatBot
-chatBotSendButton.addEventListener("click", (event)=> {
-    // Since the button is a submit button, the form gets submittd and the complete webpage reloads. This prevents the page from reloading. We would submit the message later manually
-    event.preventDefault()
-    if( validateMessage() ){
-        inputMessage    = chatBotTextArea.value
-        typeOfContainer = "message"
-        createContainer( typeOfContainer )
-        setTimeout(function(){
-            typeOfContainer = "reply"
-            createContainer( typeOfContainer )
-        }, 0);
-    }
-    else{        
-        typeOfContainer = "error";
-        createContainer( typeOfContainer )
-    }
-    chatBotTextArea.value = ""
-    chatBotTextArea.focus()
-})
+chatBotSendButton.addEventListener("click", async (event) => {
+  // Prevent page reload on form submission
+  event.preventDefault();
 
-function createContainer( typeOfContainer ) {
-    var containerID = ""
-    var textClass   = ""
-    switch( typeOfContainer ) {
-        case "message"      :
-            // This would create a message container for user's message
-            containerID = "messageContainer"
-            textClass   = "message"
-            break;
-        case "reply"        :
-        case "initialize"   :
-        case "error"        :
-            // This would create a reply container for bot's reply
-            containerID = "replyContainer"
-            textClass   = "reply"
-            break;
-        default :
-            alert("Error! Please reload the webiste.")
-    }
+  // Validate the message before sending it
+  if (validateMessage()) {
+    inputMessage = chatBotTextArea.value;
 
-    // Creating container
-    var newContainer = document.createElement( "div" )
-    newContainer.setAttribute( "class" , "container" )
-    if( containerID == "messageContainer" )
-        newContainer.setAttribute( "id" , "messageContainer" )
-    if( containerID == "replyContainer" )
-        newContainer.setAttribute( "id" , "replyContainer" )
-    chatBotSession.appendChild( newContainer )
+    // Create a container for the user's message
+    typeOfContainer = "message";
+    createContainer(typeOfContainer, inputMessage);
 
-    switch( textClass ) {
-        case "message"  :
-            var allMessageContainers    = document.querySelectorAll("#messageContainer")
-            var lastMessageContainer    = allMessageContainers[ allMessageContainers.length - 1 ]
-            var newMessage              = document.createElement( "p" )
-            newMessage.setAttribute( "class" , "message animateChat" )
-            newMessage.innerHTML        = inputMessage
-            lastMessageContainer.appendChild( newMessage )
-            lastMessageContainer.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-            break
-        case "reply"    :
-            var allReplyContainers      = document.querySelectorAll( "#replyContainer" )    
-            var lastReplyContainer      = allReplyContainers[ allReplyContainers.length - 1 ]
-            var newReply                = document.createElement( "p" )
-            newReply.setAttribute( "class" , "reply animateChat accentColor" )
-            switch( typeOfContainer ){
-                case "reply"        :
-                    newReply.innerHTML  = chatBotReply
-                    break
-                case "initialize"   :
-                    newReply.innerHTML  = chatBotInitiateMessage
-                    break
-                case "error"        :
-                    newReply.innerHTML  = chatBotBlankMessageReply
-                    break
-                default             :
-                    newReply.innerHTML  = "Sorry! I could not understannd."
-            }
-            setTimeout(function (){
-                lastReplyContainer.appendChild( newReply )
-                lastReplyContainer.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-            }, 10)            
-            break
-        default         :
-            console.log("Error in conversation")
-    }
+    // Create a reply container in advance (so we can update it later)
+    typeOfContainer = "reply";
+    const replyContainer = createContainer(typeOfContainer, "");
+
+    // Send the message to the server and handle the streaming response
+    await handleStreamingResponse(inputMessage, replyContainer);
+  } else {
+    typeOfContainer = "error";
+    createContainer(typeOfContainer, chatBotBlankMessageReply);
+  }
+
+  // Clear the input field and focus on it
+  chatBotTextArea.value = "";
+  chatBotTextArea.focus();
+});
+
+// Function to create containers for message or reply
+function createContainer(typeOfContainer, content = "") {
+  var containerID = "";
+  var textClass = "";
+
+  switch (typeOfContainer) {
+    case "message":
+      // This creates a message container for the user's message
+      containerID = "messageContainer";
+      textClass = "message";
+      break;
+    case "reply":
+    case "initialize":
+    case "error":
+      // This creates a reply container for the bot's reply
+      containerID = "replyContainer";
+      textClass = "reply";
+      break;
+    default:
+      alert("Error! Please reload the website.");
+  }
+
+  // Create a new container
+  var newContainer = document.createElement("div");
+  newContainer.setAttribute("class", "container");
+
+  if (containerID === "messageContainer")
+    newContainer.setAttribute("id", "messageContainer");
+  if (containerID === "replyContainer")
+    newContainer.setAttribute("id", "replyContainer");
+
+  chatBotSession.appendChild(newContainer);
+
+  // Depending on the type of message, display the content
+  var newMessage = document.createElement("p");
+  newMessage.setAttribute("class", textClass + " animateChat");
+  newMessage.innerHTML = content;
+  newContainer.appendChild(newMessage);
+
+  newContainer.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest",
+  });
+
+  return newMessage; // Return the message element so we can update it later
 }
 
+// Function to handle streaming response from the server
+async function handleStreamingResponse(inputMessage, replyContainer) {
+  // Send request to FastAPI server and handle the streaming response
+  const response = await fetch("http://127.0.0.1:8000/chat", {
+    method: "POST", // Ensure this is POST
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ question: inputMessage }), // Send the input message
+  });
+
+  // Create a reader to read the stream
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let done = false;
+  let accumulatedResponse = ""; // Accumulate the response
+
+  // Process the response stream in chunks
+  while (!done) {
+    const { value, done: readerDone } = await reader.read();
+    done = readerDone;
+
+    // Decode the chunk and append it to the accumulated response
+    const chunk = decoder.decode(value, { stream: true });
+    accumulatedResponse += chunk;
+
+    // Update the reply container with the accumulated response
+    replyContainer.innerHTML = accumulatedResponse;
+  }
+}
+
+// Function to initiate conversation
 function initiateConversation() {
-    chatBotSession.innerHTML = ""
-    typeOfContainer = "initialize"
-    createContainer( typeOfContainer )
+  chatBotSession.innerHTML = "";
+  typeOfContainer = "initialize";
+  createContainer(typeOfContainer, chatBotInitiateMessage);
+}
+
+// Function to validate the input message
+function validateMessage() {
+  return chatBotTextArea.value.trim().length > 0;
 }
