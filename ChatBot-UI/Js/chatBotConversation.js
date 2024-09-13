@@ -1,7 +1,6 @@
-// Selecting element to view chat
+// import {marked} from 'marked';
 var chatBotSession = document.querySelector(".chatBot .chatBody .chatSession");
 
-// Selecting trigger elements of conversation
 var chatBotSendButton = document.querySelector(
   ".chatBot .chatForm #sendButton"
 );
@@ -10,7 +9,7 @@ var chatBotTextArea = document.querySelector(".chatBot .chatForm #chatTextBox");
 // Default values for replies
 var chatBotInitiateMessage = "Hello! I am ChatBot.";
 var chatBotBlankMessageReply = "Type something!";
-var chatBotReply = "{{ reply }}";
+var chatBotReply = "{{ **test markdown** }}";
 
 // Collecting user input
 var inputMessage = "";
@@ -123,15 +122,16 @@ async function handleStreamingResponse(inputMessage, messageType, replyContainer
     // Decode the chunk and append it to the accumulated response
     const chunk = decoder.decode(value, { stream: true });
     accumulatedResponse += chunk;
-
+    // const markdownContent = marked(markdownString);
     // Update the reply container with the accumulated response
-    replyContainer.innerHTML = accumulatedResponse;
+    replyContainer.innerHTML = markdownContent;
   }
 }
 
 // Function to initiate conversation
 function initiateConversation() {
-  chatBotSession.innerHTML = "";
+  // const markdownContent = marked("**hello**");
+  chatBotSession.innerHTML = markdownContent;
   typeOfContainer = "initialize";
   createContainer(typeOfContainer, chatBotInitiateMessage);
 }

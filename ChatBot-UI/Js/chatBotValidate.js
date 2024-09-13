@@ -2,7 +2,7 @@
 var chatBotTextArea = document.querySelector( ".chatBot .chatForm #chatTextBox" )
 
 function validateMessage() {
-    if( chatBotTextArea.value == "" || chatBotTextArea.value == "Type here..." )
+    if( chatBotTextArea.value == "")
         return false
     else
         return true
