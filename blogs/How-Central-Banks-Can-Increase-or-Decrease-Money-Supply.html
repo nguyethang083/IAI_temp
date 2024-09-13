@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>  Investing with Minimal Savings: A Guide for Women Investors - FinVeda</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/Favicon1.ico"
+      type="image/png"
+      />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/css/slick.css" />
+    <link rel="stylesheet" href="../assets/css/LineIcons.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/default.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../ChatBot-UI/Css/chatBot.css">
+    <link rel="stylesheet" href="../assets/css/popupExplain.css">
+    <style>
+  #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #f76b45;
+        z-index: 9999;
+      }
+      .blog-content {
+    text-align: left;
+    margin-left: 2%;
+    margin-right: auto;
+    max-width: 65%;
+  }
+</style>
+</head>
+<body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const coords = { x: 0, y: 0 };
+  window.addEventListener("mousemove", function (e) {
+    coords.x = e.pageX;
+    coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+  });
+});
+
+</script>
+<div id="progressBar"></div>
+<script>
+  window.onscroll = function () {
+    var winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    var height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+  };
+</script>
+<div id="header-container"></div>
+<script>
+  const headerContainer = document.getElementById('header-container');
+  fetch('commonHeader.html')
+      .then(response => response.text())
+      .then(htmlContent => {
+          headerContainer.innerHTML = htmlContent;
+      });
+</script>
+    <div class="blog-content">
+      <article>
+        <br><br><br><br>
+        <p>
+        <h2>  Investing with Minimal Savings: A Guide for Women Investors</h2>
+        </p><br>
+        <p>Running a small business while managing limited savings can make investing seem daunting. However, with the right strategies and knowledge, even minimal savings can be the foundation for solid investments. </p>
+        <br>
+        <p>Here’s how to start:</p>
+        <br>
+        <p ><b>Understand the Basics</b> - Know the difference between savings and investments and familiarize yourself with different types of investments like stocks, bonds, and mutual funds.
+        <p><br>
+        <p><b>Start Small</b> - Take online courses, read books like "The Intelligent Investor," and follow financial news and blogs.</p>
+        <br>
+        <p><b>Educate Yourself</b> - Taxes can eat up a significant portion of your wealth, so you should take advantage of tax-advantaged accounts, such as 401(k)s, IRAs, 529 plans, and health savings accounts. You should also consult a tax professional to plan for estate taxes, capital gains taxes, and income taxes.</p>
+        <br>
+        <p><b>Create a Budget </b> -Allocate a small, regular amount for investments and ensure you have an emergency fund.</p>
+        <br>
+        <p><b>Diversify Your Portfolio </b> - Spread your investments across different assets to minimize risk, using mutual funds and ETFs.</p>
+        <br>
+        <p>Investing with minimal savings is not only possible but can be highly rewarding. By starting small, educating yourself, and diversifying your investments, you can build a strong financial future while continuing to grow your business and job. Remember, the key is consistency and patience. Happy investing!</p >
+      </article>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <div class="chatBot">
+      <div class="chatBotHeading">
+          <label for="chatTextBox" id="chatOpenTrigger" class="">Any Queries? Ask Me!</label>
+      </div>
+      <hr class="">
+      <div class="chatBody">
+          <div class="chatSession">
+          </div>
+      </div>
+      <form class="chatForm" autocomplete="off">
+          <div class="typingArea">
+              <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+              <button type="submit" class="sendButton" id="sendButton"><img src="../ChatBot-UI/Gfx/send.svg" alt="Send" srcset=""></button>
+          </div>
+          <button type="button" id="chatCloseTrigger">Close Chat!</button>
+      </form>
+    </div>
+    <script src="../ChatBot-UI/Js/chatBotConversation.js"></script>
+    <script src="../ChatBot-UI/Js/chatBotValidate.js"></script>
+    <script src="../ChatBot-UI/Js/chatBotAnimate.js"></script>
+    <div id="popup-menu" class="popup-menu">
+    <button id="explainBtn">Explain</button>
+    </div>
+    <script src="../assets/js/popupExplain.js"></script>
+    <div id="footer-container">
+    <script>
+      const footerContainer = document.getElementById('footer-container');
+      fetch('commonFooter.html')
+          .then(response => response.text())
+          .then(htmlContent => {
+              footerContainer.innerHTML = htmlContent;
+          });
+  </script>
+  </div>
+    <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+    <script src="../assets/js/subscribe.js"></script>
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/ajax-contact.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/scrolling-nav.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/popup.js"></script>
+    <script src="../tools/smoothScroll.js"></script>
+  </body>
+</html>
