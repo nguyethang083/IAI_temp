@@ -15,6 +15,9 @@ var chatBotReply = "{{ reply }}";
 // Collecting user input
 var inputMessage = "";
 
+// Type of message
+var messageType = "asking"
+
 // This helps generate text containers in the chat
 var typeOfContainer = "";
 
@@ -36,7 +39,7 @@ chatBotSendButton.addEventListener("click", async (event) => {
     const replyContainer = createContainer(typeOfContainer, "");
 
     // Send the message to the server and handle the streaming response
-    await handleStreamingResponse(inputMessage, replyContainer);
+    await handleStreamingResponse(inputMessage, messageType, replyContainer);
   } else {
     typeOfContainer = "error";
     createContainer(typeOfContainer, chatBotBlankMessageReply);
@@ -96,14 +99,14 @@ function createContainer(typeOfContainer, content = "") {
 }
 
 // Function to handle streaming response from the server
-async function handleStreamingResponse(inputMessage, replyContainer) {
+async function handleStreamingResponse(inputMessage, messageType, replyContainer) {
   // Send request to FastAPI server and handle the streaming response
   const response = await fetch("http://127.0.0.1:8000/chat", {
     method: "POST", // Ensure this is POST
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ question: inputMessage }), // Send the input message
+    body: JSON.stringify({ question: inputMessage, message_type : messageType }), // Send the input message
   });
 
   // Create a reader to read the stream
