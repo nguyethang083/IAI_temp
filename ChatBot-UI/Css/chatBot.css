@@ -1,6 +1,6 @@
 .chatBot {
-  /* change width of the chatbot here*/
-  width: 350px;
+  /* iai change width of the chatbot here*/
+  width: 450px;
   height: 46px;
   position: fixed;
   z-index: 10;
@@ -28,10 +28,6 @@
   -webkit-box-shadow: 0 10px 15px -10px;
           box-shadow: 0 10px 15px -10px;
   font-size: 14px;
-  /* -webkit-transition-duration: 0.2s; */
-          /* transition-duration: 0.2s; */
-  /* -webkit-transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-          /* transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
 }
 
 .chatBot *, .chatBot *::before, .chatBot *::after {
@@ -48,10 +44,6 @@
           box-sizing: border-box !important;
   word-wrap: break-word;
   font-family: 'Varela Round', sans-serif;
-  /* -webkit-transition-duration: 0.2s; */
-          /* transition-duration: 0.2s; */
-  /* -webkit-transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-          /* transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
 }
 
 .chatBot > * {
@@ -64,9 +56,7 @@
 
 .chatBot * {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .chatBot button, .chatBot label {
@@ -92,12 +82,10 @@
   margin-bottom: 0px;
   color: white;
   text-align: center;
-  /* -webkit-transition-duration: 0.5s; */
-          /* transition-duration: 0.5s; */
 }
 
 .chatBot .chatBotHeading #chatOpenTrigger.active {
-  width: auto;
+  width: 100%;
   height: 14px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -114,8 +102,6 @@
   margin: 0 0;
   opacity: 0;
   background-color: #1a73e8;
-  /* -webkit-transition-duration: 0.5s; */
-          /* transition-duration: 0.5s; */
 }
 
 .chatBot hr.active {
@@ -145,8 +131,6 @@
           justify-content: flex-end;
   margin: 0;
   background: rgba(0, 0, 0, 0.75);
-  /* -webkit-transition-duration: 0.5s; */
-          /* transition-duration: 0.5s; */
   font-size: 14px;
   line-height: 14px;
 }
@@ -170,21 +154,10 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 6px;
-  /* -webkit-transition-duration: 0.5s; */
-          /* transition-duration: 0.5s; */
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.chatBot .chatBody .chatSession .container p {
-  max-width: 80%;
-  height: auto;
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  word-wrap: break-word;
-}
-
-.chatBot .chatBody .chatSession .container .reply {
+.chatBot .chatBody .chatSession .container .reply {  
   height: auto;
   padding: 4px 10px;
   border-radius: 13px 13px 13px 5px;
@@ -197,33 +170,6 @@
   padding: 4px 10px;
   border-radius: 13px 13px 5px 13px;
   background: white;
-}
-
-.chatBot .chatBody .chatSession .container .animateChat {
-  position: relative;
-  -webkit-animation-name: animateChat;
-          animation-name: animateChat;
-  /* -webkit-animation-duration: 0.5s; */
-          /* animation-duration: 0.5s; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  /* -webkit-animation-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-          /* animation-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-}
-
-@-webkit-keyframes animateChat {
-  0% {
-    width: 10px;
-    height: 10px;
-    padding: 0;
-    opacity: 0;
-  }
-  100% {
-    width: auto;
-    height: auto;
-    padding: 4px 10px;
-    opacity: 1;
-  }
 }
 
 @keyframes animateChat {
@@ -257,8 +203,8 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  /* change here for chatbot height*/
-  height: 70%;
+  /* iai change here for chatbot height*/
+  height: 100%;
   padding: 5px;
 }
 
@@ -276,13 +222,11 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 0px;
-  /* -webkit-transition-duration: 0.5s; */
-          /* transition-duration: 0.5s; */
 }
 
 .chatBot .chatForm .typingArea {
   width: 100%;
-  height: 40px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,8 +234,6 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin: 5px 0;
-  /* -webkit-transition: height 0.2s; */
-  /* transition: height 0.2s; */
 }
 
 .chatBot .chatForm .typingArea .textArea {
@@ -304,13 +246,11 @@
   padding: 0px;
   border: 1px solid #0d3b77;
   font-size: 12px;
-  line-height: 12px;
-  /* -webkit-transition-duration: all 0.2s; */
-          /* transition-duration: all 0.2s; */
-  /* -webkit-transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-          /* transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3); */
-  /* -webkit-transition-delay: 0.75s; */
-          /* transition-delay: 0.75s; */
+  line-height: 1; /* Changed from 48px to 1 */
+  vertical-align: top; /* Added to align text to the top */
+  padding-top: 5px; /* Added to give some space at the top */
+  resize: none; /* Prevents resizing */
+  font-size: 16px; /* iai change font-size in typing area */
 }
 
 .chatBot .chatForm .typingArea .sendButton {
@@ -328,8 +268,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   background: #1a73e8;
-  /* -webkit-transition: all 0.2s ease-in-out 1s; */
-  /* transition: all 0.2s ease-in-out 1s; */
 }
 
 .chatBot .chatForm .typingArea .sendButton img {
@@ -344,7 +282,7 @@
 }
 
 .chatBot .chatForm.active {
-  height: 80px;
+  height: 150px;
   margin-top: 5px;
 }
 
@@ -352,7 +290,10 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 10px;
+  padding: 5px 5px; /* Changed from 10px to 5px 10px */
+  width: auto; /* Allow the width to adjust */
+  height: 80px; /* Set a fixed height */
+  font-size: 16px; /* iai change font-size in typing area */
 }
 
 .chatBot .chatForm.active .sendButton {
@@ -362,11 +303,9 @@
 }
 
 .chatBot.active {
-  /*change here for chatbot height*/
-  height: 80%;
+  /* iai change height of chatbot */
+  height: 87%;
   background-size: 80px;
-  /* -webkit-transition: all 0.2s, background-size 0.2s linear 0.5s; */
-  /* transition: all 0.2s, background-size 0.2s linear 0.5s; */
 }
 
 @media (max-width: 800px) {
