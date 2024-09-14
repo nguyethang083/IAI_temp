@@ -2964,3 +2964,13 @@ text-align: center;
 
   }
 }
+
+.navbar-area {
+  background-color: #3156db;
+  /* Hoặc bạn có thể dùng mã màu cụ thể hơn */
+  /* background-color: #0000ff; */
+}
+
+.navbar-no-color {
+  background-color: transparent !important;
+}
