@@ -25,7 +25,8 @@ function saveURL(event) {
     // event.preventDefault();  // Prevent the default link action
 
     const relativeURL = event.currentTarget.getAttribute('href');  // Get the relative URL from href
-    const absoluteURL = window.location.origin + relativeURL;  // Construct the absolute URL
+    const cleanedURL = relativeURL.match(/^\.(.*)/)[1]
+    const absoluteURL = window.location.origin + cleanedURL;  // Construct the absolute URL
     
     console.log('Saving Absolute URL:', absoluteURL);
 
