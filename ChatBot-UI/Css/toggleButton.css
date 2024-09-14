@@ -1,0 +1,256 @@
+/* .simplifyArea {
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    padding: 10px;
+  }
+  
+  .simplifyArea .simplify-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .simplifyArea .switch {
+    position: relative;
+    width: 200px;
+    height: 30px;
+  }
+  
+  .simplifyArea .switch input {
+    appearance: none;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background: #1e1e1e;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input::before,
+  .simplifyArea .switch input::after {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .simplifyArea .switch input::before {
+    content: "ON";
+    left: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input::after {
+    content: "OFF";
+    right: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input:checked {
+    background: #ff9800;
+  }
+  
+  .simplifyArea .switch label {
+    z-index: 1;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 15px;
+    width: 100px;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input:checked + label {
+    left: 2px;
+    background: #1e1e1e;
+  }
+  
+  .simplifyArea .switch input:not(:checked) + label {
+    right: 2px;
+    background: #ff9800;
+  } */
+
+
+/* .simplifyArea {
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    flex-direction: column;
+  }
+
+  .simplifyArea .simplify-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .simplifyArea .switch {
+    position: relative;
+    width: 200px;
+    height: 30px;
+  }
+  
+  .simplifyArea .switch input {
+    appearance: none;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background: #1e1e1e;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input::before,
+  .simplifyArea .switch input::after {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .simplifyArea .switch input::before {
+    content: "ON";
+    left: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input::after {
+    content: "OFF";
+    right: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input:checked {
+    background: #ff9800;
+  }
+  
+  .simplifyArea .switch label {
+    z-index: 1;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 15px;
+    width: 100px;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input:checked + label {
+    left: 2px;
+    background: #1e1e1e;
+  }
+  
+  .simplifyArea .switch input:not(:checked) + label {
+    right: 2px;
+    background: #ff9800;
+  } */
+
+  .simplifyArea {
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    padding: 10px;
+  }
+  
+  .simplifyArea .switch {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+  }
+  
+  .simplifyArea .switch input {
+    appearance: none;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background: #1e1e1e;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input::before,
+  .simplifyArea .switch input::after {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .simplifyArea .switch input::before {
+    content: "ON";
+    left: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input::after {
+    content: "OFF";
+    right: 20px;
+    color: #fff;
+  }
+  
+  .simplifyArea .switch input:checked {
+    background: #ff9800;
+  }
+  
+  .simplifyArea .switch label {
+    z-index: 1;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 15px;
+    width: 100px;
+    transition: 0.25s;
+  }
+  
+  .simplifyArea .switch input:checked + label {
+    left: 2px;
+    background: #1e1e1e;
+  }
+  
+  .simplifyArea .switch input:not(:checked) + label {
+    right: 2px;
+    background: #ff9800;
+  }
+  
+  #simplify-button {
+    background-color: white;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #simplify-button:hover {
+    background-color: #ff9800;
+    color: white;
+  }

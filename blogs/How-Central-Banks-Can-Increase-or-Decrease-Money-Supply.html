@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../ChatBot-UI/Css/chatBot.css">
     <link rel="stylesheet" href="../assets/css/popupExplain.css">
+    <link rel="stylesheet" href="../ChatBot-UI/Css/toggleButton.css">
     <style>
   #progressBar {
         position: fixed;
@@ -153,8 +154,15 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
       </div>
       <form class="chatForm" autocomplete="off">
+          <div class="simplifyArea">
+            <span class="switch">
+              <input type="checkbox" id="switcher">
+              <label for="switcher"></label>
+            </span>
+            <button id="simplify-button">Simplify</button>
+          </div>
           <div class="typingArea">
-              <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+              <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) placeholder = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
               <button type="submit" class="sendButton" id="sendButton"><img src="../ChatBot-UI/Gfx/send.svg" alt="Send" srcset=""></button>
           </div>
           <button type="button" id="chatCloseTrigger">Close Chat!</button>

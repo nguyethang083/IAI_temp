@@ -85,7 +85,7 @@
 }
 
 .chatBot .chatBotHeading #chatOpenTrigger.active {
-  width: auto;
+  width: 100%;
   height: 14px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -172,13 +172,6 @@
   background: white;
 }
 
-/* .chatBot .chatBody .chatSession .container .animateChat {
-  position: relative;
-  -webkit-animation-name: animateChat;
-          animation-name: animateChat;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-} */
 @keyframes animateChat {
   0% {
     width: 10px;
@@ -289,7 +282,7 @@
 }
 
 .chatBot .chatForm.active {
-  height: 120px;
+  height: 150px;
   margin-top: 5px;
 }
 
@@ -297,7 +290,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 5px 10px; /* Changed from 10px to 5px 10px */
+  padding: 5px 5px; /* Changed from 10px to 5px 10px */
   width: auto; /* Allow the width to adjust */
   height: 80px; /* Set a fixed height */
   font-size: 16px; /* iai change font-size in typing area */
@@ -311,7 +304,7 @@
 
 .chatBot.active {
   /* iai change height of chatbot */
-  height: 85%;
+  height: 87%;
   background-size: 80px;
 }
 
@@ -319,63 +312,4 @@
   .chatBot.active {
     width: calc( 100vw - 4vh) !important;
   }
-}
-
-/* Markdown format */
-.chatBot .chatBody .chatSession .container p {
-  max-width: 80%;
-  height: auto;
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  word-wrap: break-word;
-}
-
-.chatBot .chatBody .chatSession .container p h1,
-.chatBot .chatBody .chatSession .container p h2,
-.chatBot .chatBody .chatSession .container p h3,
-.chatBot .chatBody .chatSession .container p h4,
-.chatBot .chatBody .chatSession .container p h5,
-.chatBot .chatBody .chatSession .container p h6 {
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.chatBot .chatBody .chatSession .container p h1 { font-size: 1.4em; }
-.chatBot .chatBody .chatSession .container p h2 { font-size: 1.3em; }
-.chatBot .chatBody .chatSession .container p h3 { font-size: 1.2em; }
-.chatBot .chatBody .chatSession .container p h4 { font-size: 1.1em; }
-.chatBot .chatBody .chatSession .container p h5 { font-size: 1em; }
-.chatBot .chatBody .chatSession .container p h6 { font-size: 0.9em; }
-
-.chatBot .chatBody .chatSession .container p code {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-family: monospace;
-}
-
-.chatBot .chatBody .chatSession .container p a {
-  color: #64B5F6;
-  text-decoration: underline;
-}
-
-.chatBot .chatBody .chatSession .container p pre {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.chatBot .chatBody .chatSession .container p ul,
-.chatBot .chatBody .chatSession .container p ol {
-  padding-left: 20px;
-  margin: 10px 0;
-}
-
-.chatBot .chatBody .chatSession .container p blockquote {
-  border-left: 3px solid #64B5F6;
-  padding-left: 10px;
-  margin: 10px 0;
-  font-style: italic;
 }
